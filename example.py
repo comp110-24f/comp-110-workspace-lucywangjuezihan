@@ -6,3 +6,8 @@
 
 # total = sum(5, 6)
 # print(total)
+
+age: int = 3
+age = age + 1
+
+print(age)

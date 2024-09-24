@@ -1,6 +1,6 @@
 """EX02 - Chardle - A cute step toward Wordle."""
 
-__author__ = 730774129
+__author__ = "730774129"
 
 
 def main() -> None:
@@ -44,7 +44,10 @@ def contains_char(word: str, letter: str) -> None:
         index = index + 1  # index increase should be outside of if statement
 
     if count == 0:
-        print("No" + str(" instances of ") + letter + " found in " + word)
+        print("No instances of " + letter + " found in " + word)
+    elif count == 1:
+        print(str(count) + str(" instance of ") + letter + " found in " + word)
+        # need to pay attention to singular & plural forms
     else:
         print(str(count) + str(" instances of ") + letter + " found in " + word)
         # no need to return anything, but only to print

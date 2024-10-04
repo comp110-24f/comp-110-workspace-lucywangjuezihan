@@ -43,6 +43,8 @@ def contains_char(secret_word: str, char_guess: str) -> bool:
             return True
         else:
             index += 1
+    # if an output is wanted after every possible situation is tested
+    # add the return line outside of the while loop
     return False
 
 

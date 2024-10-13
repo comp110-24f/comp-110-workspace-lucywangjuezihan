@@ -21,31 +21,41 @@ def max(list_max: list[int]) -> int:
     """return the largest integer from a list of integers"""
 
     if len(list_max) == 0:
-        print("ValueError: max() arg is an empty List")
+        raise ValueError("max() arg is an empty List")
 
     # assign the max value to the first element and then compare
-    max_value = list_max[0]
+    max_value: int = list_max[0]
     # the index starts from the second element for comparison
     index = 1
 
     while index < len(list_max):
         if list_max[index] > max_value:
             max_value = list_max[index]
-            index += 1
-        return max_value  # the return value needs to be outside of the if loop
+        index += 1  # the index should be raised after checking each number
+    return max_value  # the return value needs to be outside of the if loop
 
 
 def is_equal(list1: list[int], list2: list[int]) -> bool:
     """This function will return 'True' if lists are equal"""
+
+    if len(list1) == 0 and len(list2) == 0:
+        return True
+
+    if len(list1) == 0 or len(list2) == 0:
+        return False
+
     index = 0
 
     if len(list1) == len(list2):
         while index < len(list1):
-            # use if function for False if everything else needs to be met in order for the bool to be True
+            # use the if function for False if everything else
+            # needs to be met in order for the boolean to be True
             if list1[index] != list2[index]:
                 return False
             index += 1
         return True
+    else:
+        return False
 
 
 def extend(a: list[int], b: list[int]) -> None:
